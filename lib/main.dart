@@ -16,37 +16,44 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('AgriRise - Way to new Revolution')
       ),
-      body: Container(
-        width: 300,
-        color: Colors.teal,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
+      body: Center(
+        child: Container(
+          height: 100,
+          width: 100,
+          color: Colors.teal,
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: const EdgeInsets.all(0),
           children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(8),
-              width: 100,
-              height: 100,
-              color: Colors.red,
-              alignment: Alignment.center,
+            UserAccountsDrawerHeader(
+              accountName: Text('Kuluru Vineeth'), 
+              accountEmail: Text('kuluruvineeth8623@gmail.com'),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage('https://images.unsplash.com/photo-1503249023995-51b0f3778ccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'),
+              ),
+              ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('Kuluru Vineeth'),
+              subtitle: Text('Developer'),
+              trailing: Icon(Icons.edit),
+              onTap: () {},
             ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              width: 100,
-              height: 100,
-              color: Colors.yellow,
-              alignment: Alignment.center,
-            ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              width: 100,
-              height: 100,
-              color: Colors.green,
-              alignment: Alignment.center,
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text('Email'),
+              subtitle: Text('kuluruvineeth8623@gmail.com'),
+              trailing: Icon(Icons.edit),
             )
           ],
         )
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(Icons.edit),
+      ),
     );
   }
 }
