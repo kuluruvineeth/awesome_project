@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class HomePage extends StatefulWidget {
-
+  static const String routeName = "/home";
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -37,7 +37,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text('AgriRise - Way to new Revolution')
+        title: Text('AgriRise - Way to new Revolution'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.exit_to_app),
+            onPressed: () {
+              Navigator.pop(context);
+            },)
+        ],
       ),
       body: data!=null
       ?
