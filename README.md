@@ -1,4 +1,4 @@
-# awesone_project
+# awesome_project
 
 A new Flutter project.
 
